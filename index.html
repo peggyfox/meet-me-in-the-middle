@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      let map, directions;
+      let firstLocation = {lat: 41.8981541, lng: -87.6293726};
+      let secondLocation = {lat: 41.9673224, lng: -87.6815864};
+      let search = "cafe";
+      function initMap() {
+        map = new Map(firstLocation);
+        getDirections();
+      }
+      function getDirections(){
+        directions = new Directions(firstLocation, secondLocation, search)
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEsTlDn1WxDlIEu1Qh-eWFu-Jp8-2siyA&callback=initMap"
+    async defer></script>
+    <script src="map.js"></script>
+    <script src="lodash.core.min.js"></script>
+  </body>
+
+</html>
